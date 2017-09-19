@@ -26,9 +26,10 @@
     <script>
        
         function initMap() {
+            var location = { lat: 42.717915, lng: -87.840409 };
             var MapOptions = {
-                zoom: 8,
-                center: { lat: 43.0389, lng: -87.9065 }
+                zoom: 17,
+                center: location
             }
           var map = new google.maps.Map(document.getElementById('map'), MapOptions);
           var marker = new google.maps.Marker({
