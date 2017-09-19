@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TheChromium.Models.Events>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfEvent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartOfEvent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndOfEvent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Particpants)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfEvent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartOfEvent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndOfEvent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Particpants)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventId })
+        </td>
+    </tr>
+}
+
+</table>

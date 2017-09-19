@@ -1,0 +1,18 @@
+﻿@using System.Web.UI.WebControls
+@using Microsoft.AspNet.Identity
+@{
+    if (this.User.IsInRole("Member"))
+    {
+        Layout = "~/Views/Shared/_MemberLayout.cshtml";
+    }
+    else if (this.User.IsInRole("VIP"))
+    {
+        Layout = "~/Views/Shared/_VIPLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}
+
