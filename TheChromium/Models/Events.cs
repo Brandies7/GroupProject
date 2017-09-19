@@ -8,7 +8,7 @@ namespace TheChromium.Models
 {
     public class Events
     {
-        //Zack put this here to fix merge
+        
         [Key]
         public int EventId { get; set; }
 

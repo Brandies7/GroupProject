@@ -10,7 +10,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body style="background-image: url(http://data.whicdn.com/images/42936297/original.jpg)">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -37,7 +37,7 @@
         <hr />
         <footer>
             <p>
-                &copy; @DateTime.Now.Year - @Html.ActionLink("Club Chromium", "Login", "Account",null,new {@class="ManagerLogin"})
+                &copy; @DateTime.Now.Year - @Html.ActionLink("Club Chromium", "ManagerLogin", "Account",null,new {style = "color:black"})
 
 
             </p>
