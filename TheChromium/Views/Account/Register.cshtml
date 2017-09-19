@@ -32,8 +32,9 @@
     <div class="form-group">
         @Html.Label("Sign-Up As", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @*@Html.DropDownList("Name")*@
+            
             @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, "Select")
+            
 
         </div>
     </div>

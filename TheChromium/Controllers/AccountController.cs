@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -18,10 +19,12 @@ namespace TheChromium.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         ApplicationDbContext context;
+        private DropDownList dropDownList;
 
         public AccountController()
         {
             context = new ApplicationDbContext();
+            dropDownList = new DropDownList();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -152,6 +155,7 @@ namespace TheChromium.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
+       
         {
             if (ModelState.IsValid)
             {
@@ -167,11 +171,13 @@ namespace TheChromium.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     await UserManager.AddToRoleAsync(user.Id, model.UserRoles);
+                   
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }
             ViewBag.Name = new SelectList(context.Roles.Where(u => u.Name != "Admin").ToList(), "Name", "Name");
+            dropDownList.Items[Convert.ToInt32("Manager")].Enabled = false;
 
             // If we got this far, something failed, redisplay form
             return View(model);

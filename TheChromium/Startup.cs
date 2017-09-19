@@ -38,7 +38,7 @@ namespace TheChromium
             if (!roleManager.RoleExists("Manager"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                //role.Name = "Manager";
+                role.Name = "Manager";
                 roleManager.Create(role);
             }
         }
