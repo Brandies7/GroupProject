@@ -6,6 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using TheChromium.Models;
 
 namespace TheChromium.Controllers
@@ -13,6 +17,8 @@ namespace TheChromium.Controllers
     public class ManagersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        
 
         // GET: Managers
         public ActionResult Index()
