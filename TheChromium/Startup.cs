@@ -34,6 +34,13 @@ namespace TheChromium
                 role.Name = "VIP";
                 roleManager.Create(role);
             }
+
+            if (!roleManager.RoleExists("Manager"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                //role.Name = "Manager";
+                roleManager.Create(role);
+            }
         }
     }
 }
