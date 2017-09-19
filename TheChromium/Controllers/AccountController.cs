@@ -19,12 +19,12 @@ namespace TheChromium.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         ApplicationDbContext context;
-        private DropDownList dropDownList;
+     
 
         public AccountController()
         {
             context = new ApplicationDbContext();
-            dropDownList = new DropDownList();
+            
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -96,7 +96,7 @@ namespace TheChromium.Controllers
             }
         }
 
-
+        
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]
@@ -175,9 +175,23 @@ namespace TheChromium.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
+                if (model.UserRoles == "Member")
+                {
+                    return RedirectToAction("Index", "Members");
+                }
+
+                else if (model.UserRoles == "VIP")
+                {
+                    return RedirectToAction("Index", "Members");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+
+                }
             }
             ViewBag.Name = new SelectList(context.Roles.Where(u => u.Name != "Admin").ToList(), "Name", "Name");
-            dropDownList.Items[Convert.ToInt32("Manager")].Enabled = false;
+            
 
             // If we got this far, something failed, redisplay form
             return View(model);
