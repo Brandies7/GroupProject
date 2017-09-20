@@ -29,16 +29,12 @@ namespace TheChromium.Controllers
         // GET: Managers/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Manager manager = db.Managers.Find(id);
-            if (manager == null)
+            var member = db.Members.SingleOrDefault(y => y.id == id);
+            if (member == null)
             {
                 return HttpNotFound();
             }
-            return View(manager);
+            return View(member);
         }
 
         // GET: Managers/Create
@@ -50,74 +46,40 @@ namespace TheChromium.Controllers
         // POST: Managers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Manager manager)
+        public ActionResult Create(Member member)
         {
-            if (ModelState.IsValid)
-            {
-                db.Managers.Add(manager);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(manager);
+            db.Members.Add(member);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: Managers/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Manager manager = db.Managers.Find(id);
-            if (manager == null)
+            var member = db.Members.SingleOrDefault(y =>y.id == id);
+            if (member == null)
             {
                 return HttpNotFound();
             }
-            return View(manager);
+            return View(member);
         }
 
         // POST: Managers/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id")] Manager manager)
+        public ActionResult Edit(Member member)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(manager).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(manager);
-        }
+            var MemberInDB = db.Members.SingleOrDefault(y => y.id == member.id);
 
-        // GET: Managers/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Manager manager = db.Managers.Find(id);
-            if (manager == null)
-            {
-                return HttpNotFound();
-            }
-            return View(manager);
-        }
+            MemberInDB.FirstName = member.FirstName;
+            MemberInDB.LastName = member.LastName;
+            MemberInDB.Email = member.Email;
+            MemberInDB.Password = member.Password;
+            MemberInDB.MembershipType = member.MembershipType;
 
-        // POST: Managers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Manager manager = db.Managers.Find(id);
-            db.Managers.Remove(manager);
-            db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {
