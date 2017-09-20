@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.Designer.cs">
       <DependentUpon>201709201408231_re-created the members model and added a VIP requirement for events.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709201932478_created a foreign key for members model to initiate a drop-down list in views.cs" />
+    <Compile Include="Migrations\201709201932478_created a foreign key for members model to initiate a drop-down list in views.Designer.cs">
+      <DependentUpon>201709201932478_created a foreign key for members model to initiate a drop-down list in views.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -356,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.resx">
       <DependentUpon>201709201408231_re-created the members model and added a VIP requirement for events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709201932478_created a foreign key for members model to initiate a drop-down list in views.resx">
+      <DependentUpon>201709201932478_created a foreign key for members model to initiate a drop-down list in views.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
