@@ -36,7 +36,14 @@ namespace TheChromium.Controllers
         // GET: Members/Create
         public ActionResult Create()
         {
-            return View();
+          var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
+
+          Member NewMember = new Member()
+          {
+              MemberType = MemberShipTypes
+          };
+
+          return View(NewMember);
         }
 
         // POST: Members/Create
@@ -77,7 +84,7 @@ namespace TheChromium.Controllers
             MemberInDB.LastName = member.LastName;
             MemberInDB.Email = member.Email;
             MemberInDB.Password = member.Password;
-            MemberInDB.MembershipType = member.MembershipType;
+            MemberInDB.MembershipId = member.MembershipId;
 
             return RedirectToAction("Index");
         }
