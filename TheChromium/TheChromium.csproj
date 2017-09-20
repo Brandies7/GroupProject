@@ -316,6 +316,7 @@
     <Content Include="Views\Latin\Index.cshtml" />
     <Content Include="Views\Rock\Index.cshtml" />
     <Content Include="Views\Members\MyAccount.cshtml" />
+    <Content Include="Views\Account\ManagerLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
