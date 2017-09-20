@@ -308,9 +308,9 @@
     <Content Include="Views\Members\Index.cshtml" />
     <Content Include="Views\HipHop\Index.cshtml" />
     <Content Include="Views\Techno\Index.cshtml" />
-    <Content Include="Views\Rock\Index.cshtml" />
     <Content Include="Views\Country\Index.cshtml" />
     <Content Include="Views\Latin\Index.cshtml" />
+    <Content Include="Views\Rock\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
