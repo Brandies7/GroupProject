@@ -206,6 +206,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -228,10 +235,6 @@
     <Compile Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.Designer.cs">
       <DependentUpon>201709201408231_re-created the members model and added a VIP requirement for events.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709201818017_adding a Driver Licence ID in member models.cs" />
-    <Compile Include="Migrations\201709201818017_adding a Driver Licence ID in member models.Designer.cs">
-      <DependentUpon>201709201818017_adding a Driver Licence ID in member models.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -244,6 +247,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account\WebForm1.aspx" />
     <Content Include="Content\bootstrap-darkly.css" />
     <Content Include="Content\defaultbootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -340,9 +344,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.resx">
       <DependentUpon>201709201408231_re-created the members model and added a VIP requirement for events.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709201818017_adding a Driver Licence ID in member models.resx">
-      <DependentUpon>201709201818017_adding a Driver Licence ID in member models.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
