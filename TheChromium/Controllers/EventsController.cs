@@ -17,7 +17,7 @@ namespace TheChromium.Controllers
         // GET: Events
         public ActionResult Index()
         {
-            var events = db.Events.ToList();
+            var events = db.Events.Include(y => y.MembershipRequired).ToList();
 
             return View(events);
         }
@@ -25,22 +25,25 @@ namespace TheChromium.Controllers
         // GET: Events/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Events events = db.Events.Find(id);
-            if (events == null)
+            var SelectedEvent = db.Events.Include(y => y.MembershipRequired).Single(y=>y.EventId == id);
+
+            if (SelectedEvent == null)
             {
                 return HttpNotFound();
             }
-            return View(events);
+
+            return View(SelectedEvent);
         }
 
         // GET: Events/Create
         public ActionResult Create()
         {
-            return View();
+            Events NewEvent = new Events()
+            {
+                Memberships = db.Roles.Where(u => u.Name != "Manager").ToList()
+            };
+
+            return View(NewEvent);
         }
 
         // POST: Events/Create
@@ -56,15 +59,8 @@ namespace TheChromium.Controllers
         // GET: Events/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Events events = db.Events.Find(id);
-            if (events == null)
-            {
-                return HttpNotFound();
-            }
+            var events = db.Events.Include(y => y.MembershipRequired).SingleOrDefault(y => y.EventId == id);
+
             return View(events);
         }
 
@@ -73,13 +69,13 @@ namespace TheChromium.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Events events)
         {
-            var EventInDB = db.Events.SingleOrDefault(y => y.EventId == events.EventId);
+            var EventInDB = db.Events.Include(y=>y.MembershipRequired).Single(y => y.EventId == events.EventId);
 
             EventInDB.EventName = events.EventName;
             EventInDB.DateOfEvent = events.DateOfEvent;
             EventInDB.StartOfEvent = events.StartOfEvent;
             EventInDB.EndOfEvent = events.EndOfEvent;
-            EventInDB.Description = events.Description;
+            EventInDB.Memberid = events.Memberid;
             EventInDB.Particpants = events.Particpants;
 
             return RedirectToAction("Index");

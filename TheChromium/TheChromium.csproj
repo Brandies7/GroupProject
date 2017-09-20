@@ -244,6 +244,14 @@
     <Compile Include="Migrations\201709201932478_created a foreign key for members model to initiate a drop-down list in views.Designer.cs">
       <DependentUpon>201709201932478_created a foreign key for members model to initiate a drop-down list in views.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709202025579_replaced VIP requirements with a membership requirement.cs" />
+    <Compile Include="Migrations\201709202025579_replaced VIP requirements with a membership requirement.Designer.cs">
+      <DependentUpon>201709202025579_replaced VIP requirements with a membership requirement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709202055484_removed the description from the events model.cs" />
+    <Compile Include="Migrations\201709202055484_removed the description from the events model.Designer.cs">
+      <DependentUpon>201709202055484_removed the description from the events model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -325,7 +333,6 @@
     <Content Include="Views\Shared\_VIPLayout.cshtml" />
     <Content Include="Views\Shared\_MemberLayout.cshtml" />
     <Content Include="Views\Events\Create.cshtml" />
-    <Content Include="Views\Events\Delete.cshtml" />
     <Content Include="Views\Events\Details.cshtml" />
     <Content Include="Views\Events\Edit.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
@@ -363,6 +370,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709201932478_created a foreign key for members model to initiate a drop-down list in views.resx">
       <DependentUpon>201709201932478_created a foreign key for members model to initiate a drop-down list in views.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709202025579_replaced VIP requirements with a membership requirement.resx">
+      <DependentUpon>201709202025579_replaced VIP requirements with a membership requirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709202055484_removed the description from the events model.resx">
+      <DependentUpon>201709202055484_removed the description from the events model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
