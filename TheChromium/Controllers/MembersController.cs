@@ -13,6 +13,8 @@ namespace TheChromium.Controllers
     public class MembersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+
         public ActionResult MyAccount()
         {
             return View();
