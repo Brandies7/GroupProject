@@ -11,6 +11,7 @@
 
 </head>
 <body style="background-image: url(http://data.whicdn.com/images/42936297/original.jpg)">
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -27,11 +28,15 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Events", "Index", "Events")</li>
-                    <li>@Html.ActionLink("Rooms", "Index", "Events")</li>
-
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Home <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Rooms", null)</li>
+                        </ul>
+                    </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+                        @Html.Partial("_LoginPartial")
+</div>
         </div>
     </div>
     <div class="container body-content">
