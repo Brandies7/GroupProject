@@ -19,7 +19,6 @@ namespace TheChromium.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-
         [Display(Name = "Membership Type")]
         public string MembershipType { get; set; }
 
