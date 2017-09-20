@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201709191522572_First Migration.Designer.cs">
       <DependentUpon>201709191522572_First Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.cs" />
+    <Compile Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.Designer.cs">
+      <DependentUpon>201709201408231_re-created the members model and added a VIP requirement for events.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Events.cs" />
@@ -218,7 +222,6 @@
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Member.cs" />
-    <Compile Include="Models\VipMember.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -301,7 +304,6 @@
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
-    <Content Include="Views\Members\MyAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,6 +319,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709191522572_First Migration.resx">
       <DependentUpon>201709191522572_First Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.resx">
+      <DependentUpon>201709201408231_re-created the members model and added a VIP requirement for events.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
