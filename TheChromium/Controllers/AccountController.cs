@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Globalization;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TheChromium.Models;
+using System.Collections.Generic;
 
 namespace TheChromium.Controllers
 {
@@ -64,6 +63,34 @@ namespace TheChromium.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
+        }
+        static async void FLogin()
+        {
+            // Get active session
+            FBSession sess = FBSession.ActiveSession;
+
+            // Add permissions required by the app
+            List<String> permissionList = new List<String>();
+            permissionList.Add("public_profile");
+            permissionList.Add("user_friends");
+            permissionList.Add("user_likes");
+            permissionList.Add("user_groups");
+            permissionList.Add("user_location");
+            permissionList.Add("user_photos");
+            permissionList.Add("publish_actions");
+            FBPermissions permissions = new FBPermissions(permissionList);
+
+            // Login to Facebook
+            FBResult result = await sess.LoginAsync(permissions);
+
+            if (result.Succeeded)
+            {
+                //Login successful
+            }
+            else
+            {
+                //Login failed
+            }
         }
 
         //
