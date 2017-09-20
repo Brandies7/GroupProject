@@ -7,11 +7,35 @@
 <address>
     5101 Washington Ave.<br />
     Racine, WI 53406<br />
-    <abbr title="Phone">P:</abbr>
     425.555.0100
 </address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<style>
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+</style>
+
+<div class="row">
+    <script src="https://maps.googleapis.com/maps/api/js?&libraries=places&key=AIzaSyAStekB9zs5XGPWoVR6LJ91ezJBo68yL6M&callback=initMap"
+            async defer></script>
+    
+    <div id="map"></div>
+    <script>
+       
+        function initMap() {
+            var location = { lat: 42.717915, lng: -87.840409 };
+            var MapOptions = {
+                zoom: 17,
+                center: location
+            }
+          var map = new google.maps.Map(document.getElementById('map'), MapOptions);
+          var marker = new google.maps.Marker({
+              position: location,
+              map: map
+          });
+        }
+       
+    </script>
+</div>

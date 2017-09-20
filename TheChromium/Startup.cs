@@ -5,6 +5,7 @@ using Owin;
 using TheChromium.Models;
 
 [assembly: OwinStartupAttribute(typeof(TheChromium.Startup))]
+
 namespace TheChromium
 {
     public partial class Startup
@@ -40,7 +41,23 @@ namespace TheChromium
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "Manager";
                 roleManager.Create(role);
+
+                var user = new ApplicationUser();
+                user.UserName = "manager";
+                user.Email = "manager@gmail.com";
+
+                string userPWD = "Manager1!";
+
+                var chkUser = userManager.Create(user, userPWD);
+
+                //Add default User to Role Admin   
+                if (chkUser.Succeeded)
+                {
+                    var result1 = userManager.AddToRole(user.Id, "Manager");
+
+                }
             }
         }
     }
 }
+  
