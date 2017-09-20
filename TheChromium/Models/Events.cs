@@ -8,6 +8,10 @@ namespace TheChromium.Models
 {
     public class Events
     {
+        public Events()
+        {
+            VIPRequired = "No";
+        }
         
         [Key]
         public int EventId { get; set; }
@@ -30,6 +34,8 @@ namespace TheChromium.Models
         [Display(Name = "Number of Participants")]
         public int Particpants { get; set; }
 
+        [Display(Name = "VIP Required: ")]
+        public string VIPRequired { get; set; }
 
     }
 }
