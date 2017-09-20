@@ -175,7 +175,7 @@ namespace TheChromium.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     await UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                    
-                    return RedirectToAction("Index", "Home");
+                   
                 }
                 AddErrors(result);
                 if (model.UserRoles == "Member")
