@@ -180,12 +180,12 @@ namespace TheChromium.Controllers
                 AddErrors(result);
                 if (model.UserRoles == "Member")
                 {
-                    return RedirectToAction("Index", "Members");
+                    return RedirectToAction("Create", "Members");
                 }
 
                 else if (model.UserRoles == "VIP")
                 {
-                    return RedirectToAction("Index", "Members");
+                    return RedirectToAction("Create", "Members");
                 }
                 else
                 {
