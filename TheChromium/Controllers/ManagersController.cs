@@ -23,7 +23,7 @@ namespace TheChromium.Controllers
         // GET: Managers
         public ActionResult Index()
         {
-            return View(db.Managers.ToList());
+            return View(db.Members.ToList());
         }
 
         // GET: Managers/Details/5
@@ -48,11 +48,9 @@ namespace TheChromium.Controllers
         }
 
         // POST: Managers/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id")] Manager manager)
+        public ActionResult Create(Manager manager)
         {
             if (ModelState.IsValid)
             {

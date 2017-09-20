@@ -14,24 +14,17 @@ namespace TheChromium.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Members
-        public ActionResult Index()
-        {
-            return View(db.Members.ToList());
-        }
 
         // GET: Members/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Member member = db.Members.Find(id);
+            Member member = db.Members.SingleOrDefault(y => y.id == id);
+
             if (member == null)
             {
                 return HttpNotFound();
             }
+
             return View(member);
         }
 
@@ -46,28 +39,25 @@ namespace TheChromium.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Member member)
         {
-            if (ModelState.IsValid)
-            {
-                db.Members.Add(member);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            
+            db.Members.Add(member);
+            db.SaveChanges();
 
-            return View(member);
+
+            return RedirectToAction("Index","Members");
         }
 
         // GET: Members/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Member member = db.Members.Find(id);
+            var member = db.Members.SingleOrDefault(y => y.id == id);
+
             if (member == null)
             {
                 return HttpNotFound();
             }
+
+
             return View(member);
         }
 
