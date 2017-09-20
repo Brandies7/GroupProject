@@ -21,7 +21,7 @@ namespace TheChromium.Controllers
             return View();
         }
         // ShowDetails:Member
-        public ActionResult Details()
+        public ActionResult MyAccount()
         {
             return View();
         }
