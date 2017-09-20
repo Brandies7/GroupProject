@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.Designer.cs">
       <DependentUpon>201709201408231_re-created the members model and added a VIP requirement for events.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709201818017_adding a Driver Licence ID in member models.cs" />
+    <Compile Include="Migrations\201709201818017_adding a Driver Licence ID in member models.Designer.cs">
+      <DependentUpon>201709201818017_adding a Driver Licence ID in member models.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Events.cs" />
@@ -330,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709201408231_re-created the members model and added a VIP requirement for events.resx">
       <DependentUpon>201709201408231_re-created the members model and added a VIP requirement for events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709201818017_adding a Driver Licence ID in member models.resx">
+      <DependentUpon>201709201818017_adding a Driver Licence ID in member models.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

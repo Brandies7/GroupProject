@@ -76,6 +76,7 @@ namespace TheChromium.Controllers
             MemberInDB.Email = member.Email;
             MemberInDB.Password = member.Password;
             MemberInDB.MembershipType = member.MembershipType;
+            MemberInDB.MembershipStatus = member.MembershipStatus;
 
             return RedirectToAction("Index");
         }
