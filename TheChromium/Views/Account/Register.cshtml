@@ -33,7 +33,7 @@
         @Html.Label("Sign-Up As", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             
-            @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, "Select")
+            @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, "Select",new { @style = "color:black"})
             
 
         </div>
