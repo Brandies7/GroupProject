@@ -15,7 +15,8 @@ namespace TheChromium
             ConfigureAuth(app);
             CreateRolesAndUsers();
         }
-
+        //Z added this because things broke
+         
         public void CreateRolesAndUsers()
         {
             ApplicationDbContext context = new ApplicationDbContext();
