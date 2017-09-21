@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Map View";
 }
-<br />
 <body style="background-image: url(http://data.whicdn.com/images/42936297/original.jpg)">
 </body>
 &nbsp;
@@ -17,33 +16,20 @@
         height: 400px;
         width: 100%;
     }
-    #floating-panel {
-        position: absolute;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
 </style>
 
+@Html.TextBox("address", value: Model.Location)
+
+<input id="submit" type="button" value="Locate">
 
 <div class="row">
-    <div id="floating-panel">
-        <input id="address" type="textbox" value="@Html.DisplayFor(Model => Model.Location)">
-        <input id="submit" type="button" value="Geocode">
-    </div>
+        <br />
     <div id="map"></div>
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: {lat: -34.397, lng: 150.644}
+          zoom: 10,
+          center: { lat: 42.717915, lng: -87.840409 }
         });
         var geocoder = new google.maps.Geocoder();
 
