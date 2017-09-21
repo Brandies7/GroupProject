@@ -15,7 +15,6 @@ namespace TheChromium
             ConfigureAuth(app);
             CreateRolesAndUsers();
         }
-        //Z added this because things broke
          
         public void CreateRolesAndUsers()
         {
@@ -44,7 +43,7 @@ namespace TheChromium
                 roleManager.Create(role);
                
             }
-        
+       
         }
 
     }
