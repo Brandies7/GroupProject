@@ -20,6 +20,11 @@ namespace TheChromium.Controllers
             return View();
         }
 
+        public ActionResult Index()
+        {
+            return View(db.Members.ToList());
+        }
+
         // GET: Members/Details/5
         public ActionResult Details(int? id)
         {
@@ -56,7 +61,7 @@ namespace TheChromium.Controllers
             db.SaveChanges();
 
 
-            return RedirectToAction("Index","Members");
+            return RedirectToAction("Details","Members");
         }
 
         // GET: Members/Edit/5
@@ -86,7 +91,7 @@ namespace TheChromium.Controllers
             MemberInDB.Password = member.Password;
             MemberInDB.MembershipId = member.MembershipId;
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details");
         }
 
         protected override void Dispose(bool disposing)

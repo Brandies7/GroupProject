@@ -472,7 +472,6 @@
     <Content Include="Views\Members\Delete.cshtml" />
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
-    <Content Include="Views\Members\Index.cshtml" />
     <Content Include="Views\HipHop\Index.cshtml" />
     <Content Include="Views\Techno\Index.cshtml" />
     <Content Include="Views\Country\Index.cshtml" />
@@ -483,6 +482,7 @@
     <Content Include="Views\Events\Map.cshtml" />
     <Content Include="Views\Verification\Index.cshtml" />
     <Content Include="Views\Shared\_ManagerLayout.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
