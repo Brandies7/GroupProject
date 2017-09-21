@@ -4,9 +4,12 @@
     ViewBag.Title = "Map View";
 }
 
-<h2>@Html.DisplayFor(Model => Model.Location)</h2>
+<br />
+<h2>Map View</h2>
 <br />
 
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
 <style>
     #map {
         height: 400px;
@@ -30,7 +33,7 @@
 
 <div class="row">
     <div id="floating-panel">
-        <input id="address" type="text" value="@Html.DisplayFor(Model => Model.Location)">
+        <input id="address" type="textbox" value="@Html.DisplayFor(Model => Model.Location)">
         <input id="submit" type="button" value="Geocode">
     </div>
     <div id="map"></div>
