@@ -31,7 +31,7 @@ namespace TheChromium.FBAccount
         protected List<Models.Facebook.User> GetFacebookUserData(string code)
         {
             // Exchange the code for an access token
-            Uri targetUri = new Uri("https://graph.facebook.com/oauth/access_token?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&client_secret=" + ConfigurationManager.AppSettings["FacebookAppSecret"] + "&redirect_uri=http://" + Request.ServerVariables["SERVER_NAME"] + ":" + Request.ServerVariables["SERVER_PORT"] + "/account/user.aspx&code=" + code);
+            Uri targetUri = new Uri("https://graph.facebook.com/oauth/access_token?client_id=" + ConfigurationManager.AppSettings["FacebookAppId"] + "&client_secret=" + ConfigurationManager.AppSettings["FacebookAppSecret"] + "&redirect_uri=http://" + Request.ServerVariables["SERVER_NAME"] + ":" + Request.ServerVariables["SERVER_PORT"] + "/fbaccount/user.aspx&code=" + code);
             HttpWebRequest at = (HttpWebRequest)HttpWebRequest.Create(targetUri);
 
             System.IO.StreamReader str = new System.IO.StreamReader(at.GetResponse().GetResponseStream());

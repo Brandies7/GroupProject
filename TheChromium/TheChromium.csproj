@@ -222,7 +222,24 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\RockController.cs" />
     <Compile Include="Controllers\TechnoController.cs" />
+
     <Compile Include="Controllers\VerificationController.cs" />
+
+    <Compile Include="FBAccount\user.aspx.cs">
+      <DependentUpon>user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FBAccount\user.aspx.designer.cs">
+      <DependentUpon>user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FBDefault.aspx.cs">
+      <DependentUpon>FBDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FBDefault.aspx.designer.cs">
+      <DependentUpon>FBDefault.aspx</DependentUpon>
+    </Compile>
+
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -262,6 +279,8 @@
     <Content Include="Content\defaultbootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="FBAccount\user.aspx" />
+    <Content Include="FBDefault.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -284,7 +303,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
