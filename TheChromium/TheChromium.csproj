@@ -441,6 +441,7 @@
     <Content Include="Views\Account\ManagerLogin.cshtml" />
     <Content Include="Views\Events\Map.cshtml" />
     <Content Include="Views\Verification\Index.cshtml" />
+    <Content Include="Views\Shared\_ManagerLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
