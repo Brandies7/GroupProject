@@ -35,15 +35,15 @@
 
 <div class="row">
     <div id="floating-panel">
-        <input id="address" type="textbox" value="@Html.DisplayFor(Model => Model.Location)">
-        <input id="submit" type="button" value="Geocode">
+        <input id="address" type="text" value="@Html.DisplayFor(Model => Model.Location)">
+        <input id="submit" type="button" value="Locate">
     </div>
     <div id="map"></div>
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: {lat: -34.397, lng: 150.644}
+          zoom: 10,
+          center: { lat: 42.717915, lng: -87.840409 }
         });
         var geocoder = new google.maps.Geocoder();
 
