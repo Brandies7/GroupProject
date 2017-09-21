@@ -1,23 +1,58 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<body style="background-image: url(http://data.whicdn.com/images/42936297/original.jpg)"></body>
-<div class="jumbotron">
-    <h1>Club Chromium</h1>
-    
+<body style="background-image: url(http://data.whicdn.com/images/42936297/original.jpg)">
+</body>
+
+<div style="opacity:.5" class="jumbotron">
+    <h1 style="margin-left:250px">Club Chromium</h1>
 </div>
 
 <div class="row">
-    <div id="us_contacts-2" class="widget widget_us_contacts"><div class="w-contacts"><div class="w-contacts-list"><div class="w-contacts-item for_email"><span class="w-contacts-item-value"></span></div></div></div></div><div id="us_socials-2" class="widget widget_us_socials"><h3 class="widgettitle">Social Media</h3><div class="w-socials align_center  style_default color_brand" style="font-size: 17px;"><div class="w-socials-list"><div class="w-socials-item facebook"><a class="w-socials-item-link" target="_blank" href="http://localhost:14888/FBDefault.aspx"><span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">Facebook</span></a><div class="w-socials-item-popup"><span></span></div></div><div class="w-socials-item twitter"><a class="w-socials-item-link" target="_blank" href="https://twitter.com/"><span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">Twitter</span></a><div class="w-socials-item-popup"><span></span></div></div><span class="w-socials-item-link-hover"></span></div></div><div class="w-socials-item linkedin"><a class="w-socials-item-link" target="_blank" href="https://www.linkedin.com/"><span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">LinkedIn</span></a><div class="w-socials-item-popup"></div></div><div class="w-socials-item instagram"><a class="w-socials-item-link" target="_blank" href="https://www.instagram.com/"><span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">Instagram</span></a><div class="w-socials-item-popup"></div></div></div>
+    <div id="us_contacts-2" class="widget widget_us_contacts">
+        <div class="w-contacts">
+            <div class="w-contacts-list">
+                <div class="w-contacts-item for_email"><span class="w-contacts-item-value"></span></div>
+            </div>
+        </div>
+    </div>
+    <div id="us_socials-2" class="widget widget_us_socials">
+        <h3 class="widgettitle">Social Media</h3>
+        <div class="w-socials align_center  style_default color_brand" style="font-size: 17px;">
+            <div class="w-socials-list">
+                <div class="w-socials-item facebook">
+                    <a class="w-socials-item-link" target="_blank" href="http://localhost:14888/FBDefault.aspx">
+                        <span class="w-socials-item-link-hover"></span>
+                        <span class="w-socials-item-link-title">Facebook</span>
+                    </a><div class="w-socials-item-popup">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="w-socials-item twitter">
+                    <a class="w-socials-item-link" target="_blank" href="https://twitter.com/">
+                        <span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">Twitter</span>
+                    </a><div class="w-socials-item-popup"><span></span></div>
+                </div><span class="w-socials-item-link-hover"></span>
+            </div>
+        </div><div class="w-socials-item linkedin">
+            <a class="w-socials-item-link" target="_blank" href="https://www.linkedin.com/">
+                <span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">LinkedIn</span>
+            </a><div class="w-socials-item-popup"></div>
+        </div><div class="w-socials-item instagram">
+            <a class="w-socials-item-link" target="_blank" href="https://www.instagram.com/">
+                <span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">Instagram</span>
+            </a><div class="w-socials-item-popup"></div>
+        </div>
+    </div>
 </div>
 @*<div>
-    @using (Html.BeginForm("FormSubmit", "Home", FormMethod.Post))
-    {
-        <div class="g-recaptcha" data-sitekey="6Lc7hDEUAAAAAHvPf3f8xnLC8zE_NScSB7bPopPi"></div>
-                        <input type="submit" value="Submit" />
-    }
-</div>
-<span style="display:inline-block; font-size:15px; margin:10px 0; padding:10px">
-    @ViewBag.Message
-</span>
-<script src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>*@
+        @using (Html.BeginForm("FormSubmit", "Home", FormMethod.Post))
+        {
+            <div class="g-recaptcha" data-sitekey="6Lc7hDEUAAAAAHvPf3f8xnLC8zE_NScSB7bPopPi"></div>
+                            <input type="submit" value="Submit" />
+        }
+    </div>
+    <span style="display:inline-block; font-size:15px; margin:10px 0; padding:10px">
+        @ViewBag.Message
+    </span>
+    <script src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>*@
