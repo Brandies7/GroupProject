@@ -22,14 +22,14 @@
     <script>
 
         function initMap() {
-            var location = { lat: 42.717915, lng: -87.840409 };
+            var EventLocation = @Html.DisplayFor(model => model.Location);
             var MapOptions = {
                 zoom: 17,
-                center: location
+                center: EventLocation
             }
           var map = new google.maps.Map(document.getElementById('map'), MapOptions);
           var marker = new google.maps.Marker({
-              position: location,
+              position: EventLocation,
               map: map
           });
         }
