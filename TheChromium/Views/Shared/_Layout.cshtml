@@ -22,8 +22,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Club Chromium", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <span style="font-size:35px;">
+                   
+                    @("Club Chromium")
+                </span>
+                
             </div>
+            @if (ViewBag.HideNavBar == null)
+            {
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -43,6 +49,7 @@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+            }
         </div>
     </div>
 
