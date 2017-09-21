@@ -41,10 +41,13 @@ namespace TheChromium
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "Manager";
                 roleManager.Create(role);
-
-                
+               
             }
+
+
+
         }
     }
 }
+  
   

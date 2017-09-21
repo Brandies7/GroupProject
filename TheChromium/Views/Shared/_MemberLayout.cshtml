@@ -26,7 +26,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Events", "Index", "Events")</li>
-                    <li>@Html.ActionLink("My Account","Index", "MyAccount")</li>
+                    <li>@Html.ActionLink("My Account","MyAccount", "Members")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -37,7 +37,7 @@
         <hr />
         <footer>
             <p>
-                &copy; @DateTime.Now.Year - @Html.ActionLink("Club Chromium", "Login", "Account",null,new {style = "color:black"})
+                &copy; @DateTime.Now.Year - @Html.ActionLink("Club Chromium", "Login", "Account",null,new {style = "color:white"})
 
 
             </p>
