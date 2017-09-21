@@ -1,0 +1,77 @@
+﻿@using System.Drawing
+@using Microsoft.Ajax.Utilities
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="fb-root"></div>
+    
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span style="font-size:35px">
+  
+                   
+                    @("Club Chromium")
+                </span>
+                
+            </div>
+            @if (ViewBag.HideNavBar == null)
+            {
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Events", "Index", "Events")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Rooms <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Hip-Hop", "Index", "HipHop")</li>
+                            <li>@Html.ActionLink("Techno", "Index", "Techno")</li>
+                            <li>@Html.ActionLink("Rock", "Index", "Rock")</li>
+                            <li>@Html.ActionLink("Country", "Index", "Country")</li>
+                            <li>@Html.ActionLink("Latin", "Index", "Latin")</li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+            }
+        </div>
+    </div>
+
+    @*<div id="us_contacts-2" class="widget widget_us_contacts"><div class="w-contacts"><div class="w-contacts-list"><div class="w-contacts-item for_email"><span class="w-contacts-item-value"></span></div></div></div></div><div id="us_socials-2" class="widget widget_us_socials"><h3 class="widgettitle">Social Media</h3><div class="w-socials align_left  style_default color_brand" style="font-size: 17px;"><div class="w-socials-list"><div class="w-socials-item facebook"><a class="w-socials-item-link" target="_blank" href="https://www.facebook.com/login/"><span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">Facebook</span></a><div class="w-socials-item-popup"><span></span></div></div><div class="w-socials-item twitter"><a class="w-socials-item-link" target="_blank" href="https://twitter.com/"><span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">Twitter</span></a><div class="w-socials-item-popup"><span></span></div></div><span class="w-socials-item-link-hover"></span></div></div><div class="w-socials-item linkedin"><a class="w-socials-item-link" target="_blank" href="https://www.linkedin.com/"><span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">LinkedIn</span></a><div class="w-socials-item-popup"></div></div><div class="w-socials-item instagram"><a class="w-socials-item-link" target="_blank" href="https://www.instagram.com/"><span class="w-socials-item-link-hover"></span><span class="w-socials-item-link-title">Instagram</span></a><div class="w-socials-item-popup"></div></div></div>*@
+    
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            
+            <p>
+
+                &copy; @DateTime.Now.Year - @Html.ActionLink("Club Chromium", "Login", "Account",null, new { style = "color:white"})
+            </p>
+        </footer>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

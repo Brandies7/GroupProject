@@ -482,6 +482,7 @@
     <Content Include="Views\Account\ManagerLogin.cshtml" />
     <Content Include="Views\Events\Map.cshtml" />
     <Content Include="Views\Verification\Index.cshtml" />
+    <Content Include="Views\Shared\_ManagerLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
