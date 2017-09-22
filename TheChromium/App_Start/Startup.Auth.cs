@@ -7,6 +7,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using TheChromium.Models;
 
+
 namespace TheChromium
 {
     public partial class Startup
@@ -34,7 +35,7 @@ namespace TheChromium
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -60,9 +61,14 @@ namespace TheChromium
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-               ClientId = "107515583679-vdbr10eq1mn5o1ijfqh28u7tv2javfpg.apps.googleusercontent.com",
-               ClientSecret = "UyjE1G82RpxLXPuddrrvwegv"
+                ClientId = "107515583679-vdbr10eq1mn5o1ijfqh28u7tv2javfpg.apps.googleusercontent.com",
+                ClientSecret = "UyjE1G82RpxLXPuddrrvwegv"
             });
+
+
+
+
+        
         }
     }
 }

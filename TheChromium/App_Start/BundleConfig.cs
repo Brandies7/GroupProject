@@ -27,5 +27,6 @@ namespace TheChromium
                       "~/Content/bootstrap-darkly.css",
                       "~/Content/site.css"));
         }
+
     }
 }
