@@ -88,6 +88,10 @@ namespace TheChromium.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Events()
+        {
+            return View(db.Events.ToList());
+        }
 
         protected override void Dispose(bool disposing)
         {
