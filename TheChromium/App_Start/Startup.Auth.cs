@@ -58,11 +58,11 @@ namespace TheChromium
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+               ClientId = "107515583679-vdbr10eq1mn5o1ijfqh28u7tv2javfpg.apps.googleusercontent.com",
+               ClientSecret = "UyjE1G82RpxLXPuddrrvwegv"
+            });
         }
     }
 }
