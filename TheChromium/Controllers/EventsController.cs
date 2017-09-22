@@ -79,6 +79,8 @@ namespace TheChromium.Controllers
             EventInDB.Location = events.Location;
             EventInDB.Particpants = events.Particpants;
 
+            db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 

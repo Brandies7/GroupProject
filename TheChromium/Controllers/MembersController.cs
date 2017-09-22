@@ -91,6 +91,8 @@ namespace TheChromium.Controllers
             MemberInDB.Password = member.Password;
             MemberInDB.MembershipId = member.MembershipId;
 
+            db.SaveChanges();
+
             return RedirectToAction("Details");
         }
 
