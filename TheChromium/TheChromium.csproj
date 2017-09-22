@@ -292,6 +292,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-TheChromium-20170915015845.mdf" />
+    <Content Include="App_Data\aspnet-TheChromium-20170915015845_log.ldf">
+      <DependentUpon>aspnet-TheChromium-20170915015845.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\CalendarDatabase.mdf" />
     <Content Include="App_Data\CalendarDatabase_log.ldf">
       <DependentUpon>CalendarDatabase.mdf</DependentUpon>
@@ -511,6 +515,9 @@
     <EmbeddedResource Include="Migrations\201709202055484_removed the description from the events model.resx">
       <DependentUpon>201709202055484_removed the description from the events model.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
