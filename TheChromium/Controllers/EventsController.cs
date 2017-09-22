@@ -86,14 +86,14 @@ namespace TheChromium.Controllers
             return View();
         }
 
-        public ActionResult Map()
+        public ActionResult Map(int id)
         {
-            //var EventSelected = db.Events.SingleOrDefault(y => y.EventId == id);
+            var EventSelected = db.Events.SingleOrDefault(y => y.EventId == id);
 
-            //if (EventSelected == null)
-            //{
-            //    return HttpNotFound();
-            //}
+            if (EventSelected == null)
+            {
+                return HttpNotFound();
+            }
 
             return View();
         }

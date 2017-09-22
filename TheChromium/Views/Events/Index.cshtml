@@ -55,8 +55,6 @@
             @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EventId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EventId }) |
             @Html.ActionLink("View Map", "Map", new { id = item.EventId })
         </td>
     </tr>
