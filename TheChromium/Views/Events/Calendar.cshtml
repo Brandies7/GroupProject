@@ -7,7 +7,7 @@
 </body>
 &nbsp;
 <h2>Calendar</h2>
-<div id="calender"></div>
+<div style="text-decoration-color:black" id="calender"></div>
 
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -124,14 +124,14 @@
                                 });
                             });
 
-                        GenerateCalender(events);
+                        generateCalender(events);
                     },
                     error: function(error) {
                         alert('failed');
                     }
                 })
 
-                function GenerateCalender(events) {
+                function generateCalender(events) {
                     $('#calender').fullCalendar('destroy');
                     $('#calender').fullCalendar({
                         contentHeight: 400,
@@ -185,7 +185,7 @@
                                 ThemeColor: event.color,
                                 IsFullDay: event.allDay
                             };
-                            SaveEvent(data);
+                            saveEvent(data);
                         }
 
                     });
@@ -194,26 +194,26 @@
                 $('#btnEdit').click(function() {
                     //Open modal dialog for edit event
                     openAddEditForm();
-                })
+                });
                 $('#btnDelete').click(function() {
                     if (selectedEvent != null && confirm('Are you sure?')) {
                         $.ajax({
                             type: "POST",
-                            url: '/home/DeleteEvent',
+                            url: '/Events/DeleteEvent',
                             data: { 'eventID': selectedEvent.eventID },
                             success: function(data) {
                                 if (data.status) {
                                     //Refresh the calender
-                                    FetchEventAndRenderCalendar();
+                                    fetchEventAndRenderCalendar();
                                     $('#myModal').modal('hide');
                                 }
                             },
                             error: function() {
                                 alert('Failed');
                             }
-                        })
+                        });
                     }
-                })
+                });
                 $('#dtp1,#dtp2').datetimepicker({
                     format: 'DD/MM/YYYY '
                 });
@@ -272,19 +272,19 @@
                         ThemeColor: $('#ddThemeColor').val(),
                         IsFullDay: $('#chkIsFullDay').is(':checked')
                     }
-                    SaveEvent(data);
+                    saveEvent(data);
                     // call function for submit data to the server 
-                })
+                });
 
-                function SaveEvent(data) {
+                function saveEvent(data) {
                     $.ajax({
                         type: "POST",
-                        url: '/home/SaveEvent',
+                        url: '/Events/SaveEvent',
                         data: data,
                         success: function(data) {
                             if (data.status) {
                                 //Refresh the calender
-                                FetchEventAndRenderCalendar();
+                                fetchEventAndRenderCalendar();
                                 $('#myModalSave').modal('hide');
                             }
                         },
