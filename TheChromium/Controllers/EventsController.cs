@@ -122,6 +122,7 @@ namespace TheChromium.Controllers
         [HttpPost]
         public JsonResult SaveEvent(Event e)
         {
+            var status = false;
             using (CalendarDatabaseEntities dc = new CalendarDatabaseEntities())
             {
                 if (e.EventID > 0)
@@ -143,8 +144,9 @@ namespace TheChromium.Controllers
                     dc.Events.Add(e);
                 }
                 dc.SaveChanges();
+                status = true;
             }
-            return new JsonResult { Data = new { status = true } };
+            return new JsonResult { Data = new { status = status } };
         }
 
         [HttpPost]
