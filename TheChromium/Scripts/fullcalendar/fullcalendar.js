@@ -6254,7 +6254,7 @@ var DayTableMixin = FC.DayTableMixin = {
 		}
 
 		return '' +
-            '<th class="' + classNames.join(' ') + '"' +
+			'<th class="' + classNames.join(' ') + '"' +
 				((isDateValid && this.rowCnt) === 1 ?
 					' data-date="' + date.format('YYYY-MM-DD') + '"' :
 					'') +
@@ -10625,20 +10625,20 @@ var Scroller = FC.Scroller = Class.extend({
 
 ;;
 function Iterator(items) {
-    this.items = items || [];
+	this.items = items || [];
 }
 
 
 /* Calls a method on every item passing the arguments through */
 Iterator.prototype.proxyCall = function(methodName) {
-    var args = Array.prototype.slice.call(arguments, 1);
-    var results = [];
+	var args = Array.prototype.slice.call(arguments, 1);
+	var results = [];
 
-    this.items.forEach(function(item) {
-        results.push(item[methodName].apply(item, args));
-    });
+	this.items.forEach(function(item) {
+		results.push(item[methodName].apply(item, args));
+	});
 
-    return results;
+	return results;
 };
 
 ;;

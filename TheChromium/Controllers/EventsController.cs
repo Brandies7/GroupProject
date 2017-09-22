@@ -119,13 +119,12 @@ namespace TheChromium.Controllers
         [HttpPost]
         public JsonResult SaveEvent(Event e)
         {
-            var status = false;
             using (CalendarDatabaseEntities dc = new CalendarDatabaseEntities())
             {
                 if (e.EventID > 0)
                 {
                     //Update the event
-                    var v = dc.Events.Where(a => a.EventID == e.EventID).FirstOrDefault();
+                    var v = dc.Events.FirstOrDefault(a => a.EventID == e.EventID);
                     if (v != null)
                     {
                         v.Subject = e.Subject;
@@ -141,18 +140,17 @@ namespace TheChromium.Controllers
                     dc.Events.Add(e);
                 }
                 dc.SaveChanges();
-                status = true;
             }
-            return new JsonResult { Data = new { status = status } };
+            return new JsonResult { Data = new { status = true } };
         }
 
         [HttpPost]
-        public JsonResult DeleteEvent(int eventID)
+        public JsonResult DeleteEvent(int eventId)
         {
             var status = false;
             using (CalendarDatabaseEntities dc = new CalendarDatabaseEntities())
             {
-                var v = dc.Events.Where(a => a.EventID == eventID).FirstOrDefault();
+                var v = dc.Events.FirstOrDefault(a => a.EventID == eventId);
                 if (v != null)
                 {
                     dc.Events.Remove(v);
