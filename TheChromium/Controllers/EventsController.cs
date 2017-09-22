@@ -76,6 +76,7 @@ namespace TheChromium.Controllers
             EventInDB.StartOfEvent = events.StartOfEvent;
             EventInDB.EndOfEvent = events.EndOfEvent;
             EventInDB.Memberid = events.Memberid;
+            EventInDB.Location = events.Location;
             EventInDB.Particpants = events.Particpants;
 
             return RedirectToAction("Index");
