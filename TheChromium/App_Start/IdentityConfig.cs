@@ -11,6 +11,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using TheChromium.Models;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
 
 namespace TheChromium
 {
@@ -19,6 +22,7 @@ namespace TheChromium
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
+
             return Task.FromResult(0);
         }
     }
@@ -28,6 +32,25 @@ namespace TheChromium
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your SMS service here to send a text message.
+            string accountSid = System.Configuration.ConfigurationManager.AppSettings["SMSAccountIdentification"];
+
+            string authToken = System.Configuration.ConfigurationManager.AppSettings["SMSAccountPassword"];
+
+            string fromNumber = System.Configuration.ConfigurationManager.AppSettings["SMSAccountFrom"];
+
+            // Initialize the Twilio client
+
+            TwilioClient.Init(accountSid, authToken);
+
+            MessageResource result = MessageResource.Create(
+
+                    from: new PhoneNumber(fromNumber),
+
+                    to: new PhoneNumber(message.Destination),
+
+                    body: message.Body);
+
+
             return Task.FromResult(0);
         }
     }
