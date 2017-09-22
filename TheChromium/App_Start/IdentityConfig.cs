@@ -14,6 +14,7 @@ using TheChromium.Models;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
+using System.Configuration;
 
 namespace TheChromium
 {
@@ -32,11 +33,11 @@ namespace TheChromium
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your SMS service here to send a text message.
-            string accountSid = System.Configuration.ConfigurationManager.AppSettings["SMSAccountIdentification"];
+            string accountSid = ConfigurationManager.AppSettings["SMSAccountIdentification"];
 
-            string authToken = System.Configuration.ConfigurationManager.AppSettings["SMSAccountPassword"];
+            string authToken = ConfigurationManager.AppSettings["SMSAccountPassword"];
 
-            string fromNumber = System.Configuration.ConfigurationManager.AppSettings["SMSAccountFrom"];
+            string fromNumber = ConfigurationManager.AppSettings["SMSAccountFrom"];
 
             // Initialize the Twilio client
 
