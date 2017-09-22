@@ -23,7 +23,9 @@ namespace TheChromium.Controllers
         // GET: Managers
         public ActionResult Index()
         {
-            return View(db.Members.ToList());
+            var members = db.Members.Include(y => y.MemberStatus).ToList();
+
+            return View(members);
         }
 
         // GET: Managers/Details/5
@@ -41,10 +43,12 @@ namespace TheChromium.Controllers
         public ActionResult Create()
         {
             var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
+            var StatusOptions = db.MemberStats.ToList();
 
             Member NewMember = new Member()
             {
-                MemberType = MemberShipTypes
+                MemberType = MemberShipTypes,
+                StatusOptions = StatusOptions
             };
 
             return View(NewMember);
@@ -76,17 +80,16 @@ namespace TheChromium.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Member member)
         {
-            var MemberInDB = db.Members.SingleOrDefault(y => y.id == member.id);
+            var MemberInDB = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == member.id);
 
             MemberInDB.FirstName = member.FirstName;
             MemberInDB.LastName = member.LastName;
             MemberInDB.Email = member.Email;
             MemberInDB.Password = member.Password;
             MemberInDB.MembershipId = member.MembershipId;
-            MemberInDB.MembershipStatus = member.MembershipStatus;
+            MemberInDB.StatusId = member.StatusId;
 
             db.SaveChanges();
-
             return RedirectToAction("Index");
         }
 

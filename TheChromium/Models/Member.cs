@@ -27,8 +27,12 @@ namespace TheChromium.Models
         [Display(Name = "Membership Type")]
         public IdentityRole MembershipId { get; set; }
 
-        [Display(Name = "Member Status")]
-        public string MembershipStatus { get; set; }
+
+        [ForeignKey("MemberStatus")]
+        public int StatusId { get; set; }
+
+        [Display(Name = "Subscription Status")]
+        public MembershipStatus MemberStatus { get; set; }
 
         [Display(Name = "Email Address")]
         public string Email { get; set; }
@@ -40,6 +44,8 @@ namespace TheChromium.Models
         public string DriverID { get; set; }
 
 
-       public IEnumerable<IdentityRole> MemberType { get; set; }
+        public IEnumerable<IdentityRole> MemberType { get; set; }
+
+        public IEnumerable<MembershipStatus> StatusOptions { get; set; }
     }
 }

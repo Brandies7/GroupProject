@@ -33,8 +33,11 @@ namespace TheChromium.Models
 
         public DbSet<Manager> Managers { get; set; }
 
-        public System.Data.Entity.DbSet<TheChromium.Models.Events> Events { get; set; }
+        public DbSet<Events> Events { get; set; }
 
-        public System.Data.Entity.DbSet<TheChromium.Models.Member> Members { get; set; }
+        public DbSet<Member> Members { get; set; }
+
+        public DbSet<MembershipStatus> MemberStats { get; set; }
+
     }
 }

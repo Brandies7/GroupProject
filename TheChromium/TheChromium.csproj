@@ -283,6 +283,14 @@
     <Compile Include="Migrations\201709202055484_removed the description from the events model.Designer.cs">
       <DependentUpon>201709202055484_removed the description from the events model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709221927132_created a membership model model for members to select their card status.cs" />
+    <Compile Include="Migrations\201709221927132_created a membership model model for members to select their card status.Designer.cs">
+      <DependentUpon>201709221927132_created a membership model model for members to select their card status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709222021166_made a foregin key to members to choose three status options.cs" />
+    <Compile Include="Migrations\201709222021166_made a foregin key to members to choose three status options.Designer.cs">
+      <DependentUpon>201709222021166_made a foregin key to members to choose three status options.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -291,6 +299,7 @@
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\MembershipStatus.cs" />
     <Compile Include="MyModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -530,6 +539,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709202055484_removed the description from the events model.resx">
       <DependentUpon>201709202055484_removed the description from the events model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709221927132_created a membership model model for members to select their card status.resx">
+      <DependentUpon>201709221927132_created a membership model model for members to select their card status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709222021166_made a foregin key to members to choose three status options.resx">
+      <DependentUpon>201709222021166_made a foregin key to members to choose three status options.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

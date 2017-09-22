@@ -22,7 +22,9 @@ namespace TheChromium.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Members.ToList());
+            var members = db.Members.Include(y=> y.MemberStatus).ToList();
+
+            return View(members);
         }
 
         // GET: Members/Details/5
@@ -41,11 +43,13 @@ namespace TheChromium.Controllers
         // GET: Members/Create
         public ActionResult Create()
         {
-          var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
+            var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
+            var StatusOptions = db.MemberStats.ToList();
 
           Member NewMember = new Member()
           {
-              MemberType = MemberShipTypes
+              MemberType = MemberShipTypes,
+              StatusOptions = StatusOptions
           };
 
           return View(NewMember);
@@ -67,7 +71,13 @@ namespace TheChromium.Controllers
         // GET: Members/Edit/5
         public ActionResult Edit(int? id)
         {
-            var member = db.Members.SingleOrDefault(y => y.id == id);
+            var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
+            var StatusOptions = db.MemberStats.ToList();
+
+            var member = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == id);
+
+            member.MemberType = MemberShipTypes;
+            member.StatusOptions = StatusOptions;
 
             if (member == null)
             {
@@ -83,13 +93,14 @@ namespace TheChromium.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Member member)
         {
-            var MemberInDB = db.Members.SingleOrDefault(y => y.id == member.id);
+            var MemberInDB = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == member.id);
 
             MemberInDB.FirstName = member.FirstName;
             MemberInDB.LastName = member.LastName;
             MemberInDB.Email = member.Email;
             MemberInDB.Password = member.Password;
             MemberInDB.MembershipId = member.MembershipId;
+            MemberInDB.StatusId = member.StatusId;
 
             db.SaveChanges();
 
