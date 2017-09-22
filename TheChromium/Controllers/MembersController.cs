@@ -22,15 +22,21 @@ namespace TheChromium.Controllers
 
         public ActionResult Index()
         {
+            var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
             var members = db.Members.Include(y=> y.MemberStatus).ToList();
 
+            foreach(var member in members)
+            {
+                member.StatusOptions = StatusOptions;
+            }
+            
             return View(members);
         }
 
         // GET: Members/Details/5
         public ActionResult Details(int? id)
         {
-            Member member = db.Members.SingleOrDefault(y => y.id == id);
+            Member member = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == id);
 
             if (member == null)
             {
@@ -44,13 +50,13 @@ namespace TheChromium.Controllers
         public ActionResult Create()
         {
             var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
-            var StatusOptions = db.MemberStats.ToList();
+            var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
 
           Member NewMember = new Member()
           {
               MemberType = MemberShipTypes,
               StatusOptions = StatusOptions
-          };
+        };
 
           return View(NewMember);
         }
@@ -60,7 +66,12 @@ namespace TheChromium.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Member member)
         {
-            
+            var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
+            var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
+
+            member.MemberType = MemberShipTypes;
+            member.StatusOptions = StatusOptions;
+
             db.Members.Add(member);
             db.SaveChanges();
 
@@ -72,7 +83,7 @@ namespace TheChromium.Controllers
         public ActionResult Edit(int? id)
         {
             var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
-            var StatusOptions = db.MemberStats.ToList();
+            var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
 
             var member = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == id);
 
