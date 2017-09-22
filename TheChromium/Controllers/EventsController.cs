@@ -106,5 +106,14 @@ namespace TheChromium.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public JsonResult GetEvents()
+        {
+            using (CalendarDatabaseEntities dc = new CalendarDatabaseEntities())
+            {
+                var events = dc.Events.ToList();
+                return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            }
+        }
     }
 }
