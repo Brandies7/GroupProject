@@ -85,6 +85,8 @@ namespace TheChromium.Controllers
             MemberInDB.MembershipId = member.MembershipId;
             MemberInDB.MembershipStatus = member.MembershipStatus;
 
+            db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
