@@ -1,6 +1,4 @@
-﻿using Twilio;
-using Twilio.Rest.Api.V2010.Account;
-using Twilio.Types;
+﻿
 
 @model TheChromium.Models.IndexViewModel
 @{
@@ -48,7 +46,7 @@ using Twilio.Types;
             }
             else
             {
-                <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")</text>
+                <text>[&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")&nbsp;]</text>
             }
         </dd>
 

@@ -23,9 +23,9 @@ namespace TheChromium.Controllers
         // GET: Managers
         public ActionResult Index()
         {
-            var members = db.Members.Include(y => y.MemberStatus).ToList();
+            //var members = db.Members.Include(y => y.MemberStatus).ToList();
 
-            return View(members);
+            return View();
         }
 
         // GET: Managers/Details/5
@@ -98,6 +98,10 @@ namespace TheChromium.Controllers
             return View(db.Events.ToList());
         }
 
+        //public RedirectResult RedirectToAspx()
+        //{
+        //    return Redirect("SendSMS.aspx");
+        //}
         protected override void Dispose(bool disposing)
         {
             if (disposing)

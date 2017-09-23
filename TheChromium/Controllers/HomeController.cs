@@ -34,7 +34,7 @@ namespace TheChromium.Controllers
             else
             {
                 //ViewBag.Message = status ? "Google reCaptcha validation successful" : "Google reCaptcha validation failed";
-                return View("");
+                return null;
             }
 
         }
