@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TheChromium.Models;
 using System.Collections.Generic;
+using System.Web.Mvc;
+using Newtonsoft.Json.Linq;
 
 
 

@@ -25,21 +25,21 @@ namespace TheChromium.Controllers
             var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
             var obj = JObject.Parse(result);
             var status = (bool)obj.SelectToken("success");
-           // ViewBag.Message = status ? "Google reCaptcha validation successful" : "Google reCaptcha validation failed";
-            if(status == true)
+            //ViewBag.Message = status ? "Google reCaptcha validation successful" : "Google reCaptcha validation failed";
+            if (status == true)
             {
                 ViewBag.Message = status ? "Google reCaptcha validation successful" : "Google reCaptcha validation failed";
                 return View("Index");
             }
             else
             {
-                ViewBag.Message = status ? "Google reCaptcha validation successful" : "Google reCaptcha validation failed";
-                return (null);
+                //ViewBag.Message = status ? "Google reCaptcha validation successful" : "Google reCaptcha validation failed";
+                return View("");
             }
-           
+
         }
 
-        
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
