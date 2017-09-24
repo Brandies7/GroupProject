@@ -313,6 +313,14 @@
     <Compile Include="Migrations\201709221927132_created a membership model model for members to select their card status.Designer.cs">
       <DependentUpon>201709221927132_created a membership model model for members to select their card status.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709242016535_adding unknown migration.cs" />
+    <Compile Include="Migrations\201709242016535_adding unknown migration.Designer.cs">
+      <DependentUpon>201709242016535_adding unknown migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709242034453_changed drivers id.cs" />
+    <Compile Include="Migrations\201709242034453_changed drivers id.Designer.cs">
+      <DependentUpon>201709242034453_changed drivers id.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -594,6 +602,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709221927132_created a membership model model for members to select their card status.resx">
       <DependentUpon>201709221927132_created a membership model model for members to select their card status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709242016535_adding unknown migration.resx">
+      <DependentUpon>201709242016535_adding unknown migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709242034453_changed drivers id.resx">
+      <DependentUpon>201709242034453_changed drivers id.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
