@@ -89,18 +89,6 @@ namespace TheChromium.Controllers
             return View();
         }
 
-        public ActionResult Map(int id)
-        {
-            var EventSelected = db.Events.SingleOrDefault(y => y.EventId == id);
-
-            if (EventSelected == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View();
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

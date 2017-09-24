@@ -109,7 +109,6 @@ namespace TheChromium.Controllers
             MemberInDB.FirstName = member.FirstName;
             MemberInDB.LastName = member.LastName;
             MemberInDB.Email = member.Email;
-            MemberInDB.Password = member.Password;
             MemberInDB.MembershipId = member.MembershipId;
             MemberInDB.StatusId = member.StatusId;
 

@@ -7,9 +7,7 @@
 
 <h2>Events</h2>
 
-<p>
-    @Html.ActionLink("View Calendar", "Calendar", "Events")
-</p>
+    @Html.ActionLink("Create New Event", "Create", "Events") |
 <table class="table">
     <tr>
         <th>
@@ -55,8 +53,8 @@
                 @Html.DisplayFor(modelItem => item.Location)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", "Events", new { id = item.EventId }) |
-                @Html.ActionLink("View Map", "Map", "Events", new { id = item.EventId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
+                @Html.ActionLink("View Map", "Map", new { id = item.EventId })
             </td>
         </tr>
     }

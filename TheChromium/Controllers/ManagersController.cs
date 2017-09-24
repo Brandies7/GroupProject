@@ -85,7 +85,6 @@ namespace TheChromium.Controllers
             MemberInDB.FirstName = member.FirstName;
             MemberInDB.LastName = member.LastName;
             MemberInDB.Email = member.Email;
-            MemberInDB.Password = member.Password;
             MemberInDB.MembershipId = member.MembershipId;
             MemberInDB.StatusId = member.StatusId;
 
@@ -96,6 +95,18 @@ namespace TheChromium.Controllers
         public ActionResult Events()
         {
             return View(db.Events.ToList());
+        }
+
+        public ActionResult Map(int id)
+        {
+            var EventSelected = db.Events.SingleOrDefault(y => y.EventId == id);
+
+            if (EventSelected == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View();
         }
 
         //public RedirectResult RedirectToAspx()

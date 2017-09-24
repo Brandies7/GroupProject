@@ -37,9 +37,6 @@ namespace TheChromium.Models
         [Display(Name = "Email Address")]
         public string Email { get; set; }
 
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
         [Display(Name = "Driver's License ID")]
         public string DriverID { get; set; }
 

@@ -313,14 +313,6 @@
     <Compile Include="Migrations\201709221927132_created a membership model model for members to select their card status.Designer.cs">
       <DependentUpon>201709221927132_created a membership model model for members to select their card status.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709222021166_made a foregin key to members to choose three status options.cs" />
-    <Compile Include="Migrations\201709222021166_made a foregin key to members to choose three status options.Designer.cs">
-      <DependentUpon>201709222021166_made a foregin key to members to choose three status options.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709230000549_adding deleted migrations.cs" />
-    <Compile Include="Migrations\201709230000549_adding deleted migrations.Designer.cs">
-      <DependentUpon>201709230000549_adding deleted migrations.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -575,6 +567,7 @@
     <Content Include="Views\Managers\Events.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="Views\Managers\Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -601,12 +594,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709221927132_created a membership model model for members to select their card status.resx">
       <DependentUpon>201709221927132_created a membership model model for members to select their card status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709222021166_made a foregin key to members to choose three status options.resx">
-      <DependentUpon>201709222021166_made a foregin key to members to choose three status options.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709230000549_adding deleted migrations.resx">
-      <DependentUpon>201709230000549_adding deleted migrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
