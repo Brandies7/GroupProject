@@ -38,8 +38,7 @@ namespace TheChromium.Models
         public string Email { get; set; }
 
         [Display(Name = "Driver's License ID")]
-        public string DriverNumber { get; set; }
-
+        public string DriversNumber { get; set; }
 
         public IEnumerable<IdentityRole> MemberType { get; set; }
 
