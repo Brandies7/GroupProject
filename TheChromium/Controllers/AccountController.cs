@@ -152,7 +152,7 @@ namespace TheChromium.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.Roles.Where(u => u.Name != "Admin").ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(context.Roles.Where(u => u.Name != "Manager").ToList(), "Name", "Name");
             return View();
         }
 
@@ -198,7 +198,7 @@ namespace TheChromium.Controllers
 
                 }
             }
-            ViewBag.Name = new SelectList(context.Roles.Where(u => u.Name != "Admin").ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(context.Roles.Where(u => u.Name != "Manager").ToList(), "Name", "Name");
             
 
             // If we got this far, something failed, redisplay form
