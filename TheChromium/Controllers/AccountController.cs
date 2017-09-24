@@ -9,7 +9,6 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TheChromium.Models;
 using System.Collections.Generic;
-
 using Newtonsoft.Json.Linq;
 
 
@@ -152,7 +151,7 @@ namespace TheChromium.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.Roles.Where(u => u.Name != "Admin").ToList(), "Name", "Name");
+            ViewBag.Name = new SelectList(context.Roles.Where(u => u.Name != "Manager").ToList(), "Name", "Name");
             return View();
         }
 
