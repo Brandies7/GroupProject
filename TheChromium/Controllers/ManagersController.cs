@@ -23,7 +23,7 @@ namespace TheChromium.Controllers
         // GET: Managers
         public ActionResult Index()
         {
-            //var members = db.Members.Include(y => y.MemberStatus).ToList();
+            var members = db.Members.Include(y => y.MemberStatus).ToList();
 
             return View();
         }
