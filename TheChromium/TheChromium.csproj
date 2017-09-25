@@ -329,6 +329,10 @@
     <Compile Include="Migrations\201709242034453_changed drivers id.Designer.cs">
       <DependentUpon>201709242034453_changed drivers id.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709250604221_changed name of foreign key.cs" />
+    <Compile Include="Migrations\201709250604221_changed name of foreign key.Designer.cs">
+      <DependentUpon>201709250604221_changed name of foreign key.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -616,6 +620,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709242034453_changed drivers id.resx">
       <DependentUpon>201709242034453_changed drivers id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709250604221_changed name of foreign key.resx">
+      <DependentUpon>201709250604221_changed name of foreign key.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

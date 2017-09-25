@@ -90,7 +90,7 @@ namespace TheChromium.Controllers
             MemberInDB.LastName = member.LastName;
             MemberInDB.Email = member.Email;
             MemberInDB.MembershipId = member.MembershipId;
-            MemberInDB.StatusId = member.StatusId;
+            MemberInDB.MembershipStatusId = member.MembershipStatusId;
 
             db.SaveChanges();
             return RedirectToAction("Index");
