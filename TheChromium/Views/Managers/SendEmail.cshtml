@@ -1,0 +1,27 @@
+﻿@model TheChromium.Models.Manager
+@{
+    ViewBag.Title = "SendingEmails";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<h2>SendingEmails</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.email, new { @class = "text-danger" })
+        @*<div class=" col-md-10">
+            @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
+        </div>
+    </div>*@
+        <div class="form-group">
+            <label>Body</label>
+            <textarea id="txtDescription" rows="3" class="form-control"></textarea>
+        </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Send" />
+        </div>
+    </div>
+}

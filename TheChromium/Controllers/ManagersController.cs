@@ -7,10 +7,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Threading.Tasks;
+using System.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TheChromium.Models;
+using Twilio;
+using Twilio.Types;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace TheChromium.Controllers
 {
@@ -18,7 +22,7 @@ namespace TheChromium.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        
+
 
         // GET: Managers
         public ActionResult Index()
@@ -67,7 +71,7 @@ namespace TheChromium.Controllers
         // GET: Managers/Edit/5
         public ActionResult Edit(int? id)
         {
-            var member = db.Members.SingleOrDefault(y =>y.id == id);
+            var member = db.Members.SingleOrDefault(y => y.id == id);
             if (member == null)
             {
                 return HttpNotFound();
@@ -86,7 +90,7 @@ namespace TheChromium.Controllers
             MemberInDB.LastName = member.LastName;
             MemberInDB.Email = member.Email;
             MemberInDB.MembershipId = member.MembershipId;
-            MemberInDB.StatusId = member.StatusId;
+            MemberInDB.MembershipStatusId = member.MembershipStatusId;
 
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -108,6 +112,12 @@ namespace TheChromium.Controllers
 
             return View();
         }
+        public ActionResult SendEmail()
+        {
+            Email email = new Email();
+            
+            return View(email);
+        }
 
         //public RedirectResult RedirectToAspx()
         //{
@@ -123,3 +133,7 @@ namespace TheChromium.Controllers
         }
     }
 }
+
+      
+
+            

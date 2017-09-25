@@ -139,6 +139,10 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=105.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.2\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Activities.Presentation" />
@@ -220,6 +224,14 @@
     </Reference>
     <Reference Include="Twilio, Version=5.6.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Twilio.5.6.5\lib\net451\Twilio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Twilio.AspNet.Common, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.AspNet.Mvc.5.0.2\lib\net451\Twilio.AspNet.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Twilio.AspNet.Mvc, Version=5.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.AspNet.Mvc.5.0.2\lib\net451\Twilio.AspNet.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -321,7 +333,12 @@
     <Compile Include="Migrations\201709242223490_put the foreign keys back.Designer.cs">
       <DependentUpon>201709242223490_put the foreign keys back.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709250604221_changed name of foreign key.cs" />
+    <Compile Include="Migrations\201709250604221_changed name of foreign key.Designer.cs">
+      <DependentUpon>201709250604221_changed name of foreign key.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Events.cs" />
@@ -346,12 +363,12 @@
       <DependentUpon>MyModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SendSMS.aspx.cs">
-      <DependentUpon>SendSMS.aspx</DependentUpon>
+    <Compile Include="SendMessage.aspx.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SendSMS.aspx.designer.cs">
-      <DependentUpon>SendSMS.aspx</DependentUpon>
+    <Compile Include="SendMessage.aspx.designer.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -507,7 +524,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="SendSMS.aspx" />
+    <Content Include="SendMessage.aspx" />
     <Content Include="Style\StyleSheet.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -576,6 +593,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\Managers\Map.cshtml" />
+    <Content Include="Views\Managers\SendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -608,6 +626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709242223490_put the foreign keys back.resx">
       <DependentUpon>201709242223490_put the foreign keys back.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709250604221_changed name of foreign key.resx">
+      <DependentUpon>201709250604221_changed name of foreign key.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -55,9 +55,9 @@ namespace TheChromium
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "173313186551558",
+               appSecret: "93c82a071fd6ddb223333bec421f7526");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

@@ -29,7 +29,7 @@ namespace TheChromium.Models
 
 
         [ForeignKey("MemberStatus")]
-        public int StatusId { get; set; }
+        public int MembershipStatusId { get; set; }
 
         [Display(Name = "Subscription Status")]
         public MembershipStatus MemberStatus { get; set; }
