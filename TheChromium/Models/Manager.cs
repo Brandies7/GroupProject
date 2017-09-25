@@ -16,6 +16,10 @@ namespace TheChromium.Models
         [Required]
         [Display(Name = "Password")]
         public string Password { get; set; }
+        [Required]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
 
 
     }

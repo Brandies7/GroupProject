@@ -29,7 +29,7 @@ namespace TheChromium.Controllers
         {
             var members = db.Members.Include(y => y.MemberStatus).ToList();
 
-            return View();
+            return View(members);
         }
 
         // GET: Managers/Details/5
@@ -114,15 +114,12 @@ namespace TheChromium.Controllers
         }
         public ActionResult SendEmail()
         {
-            Email email = new Email();
+            //Email email = new Email();
             
-            return View(email);
+            return View();
         }
 
-        //public RedirectResult RedirectToAspx()
-        //{
-        //    return Redirect("SendSMS.aspx");
-        //}
+     
         protected override void Dispose(bool disposing)
         {
             if (disposing)

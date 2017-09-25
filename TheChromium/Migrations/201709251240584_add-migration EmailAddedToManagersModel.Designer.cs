@@ -7,13 +7,13 @@ namespace TheChromium.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addingunknownmigration : IMigrationMetadata
+    public sealed partial class addmigrationEmailAddedToManagersModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addingunknownmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addmigrationEmailAddedToManagersModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709242016535_adding unknown migration"; }
+            get { return "201709251240584_add-migration EmailAddedToManagersModel"; }
         }
         
         string IMigrationMetadata.Source

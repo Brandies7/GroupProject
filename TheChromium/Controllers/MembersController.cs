@@ -69,10 +69,8 @@ namespace TheChromium.Controllers
             var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
             var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
 
-            member.MemberType = MemberShipTypes;
-            member.StatusOptions = StatusOptions;
-
             db.Members.Add(member);
+
             db.SaveChanges();
 
 
