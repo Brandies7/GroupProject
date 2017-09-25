@@ -346,12 +346,12 @@
       <DependentUpon>MyModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SendSMS.aspx.cs">
-      <DependentUpon>SendSMS.aspx</DependentUpon>
+    <Compile Include="SendMessage.aspx.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SendSMS.aspx.designer.cs">
-      <DependentUpon>SendSMS.aspx</DependentUpon>
+    <Compile Include="SendMessage.aspx.designer.cs">
+      <DependentUpon>SendMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -507,7 +507,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="SendSMS.aspx" />
+    <Content Include="SendMessage.aspx" />
     <Content Include="Style\StyleSheet.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

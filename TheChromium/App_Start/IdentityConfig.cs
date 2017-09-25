@@ -29,35 +29,35 @@ namespace TheChromium
         }
     }
 
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            string accountSid = ConfigurationManager.AppSettings["SMSAccountIdentification"];
+    //public class SmsService : IIdentityMessageService
+    //{
+    //    public Task SendAsync(IdentityMessage message)
+    //    {
+    //        // Plug in your SMS service here to send a text message.
+    //        string accountSid = ConfigurationManager.AppSettings["SMSAccountIdentification"];
 
-            string authToken = ConfigurationManager.AppSettings["SMSAccountPassword"];
+    //        string authToken = ConfigurationManager.AppSettings["SMSAccountPassword"];
 
-            string fromNumber = ConfigurationManager.AppSettings["SMSAccountFrom"];
+    //        string fromNumber = ConfigurationManager.AppSettings["SMSAccountFrom"];
 
-            // Initialize the Twilio client
+    //        // Initialize the Twilio client
 
-            TwilioClient.Init(accountSid, authToken);
+    //        TwilioClient.Init(accountSid, authToken);
 
-            MessageResource result = MessageResource.Create(
+    //        MessageResource result = MessageResource.Create(
 
-                    from: new PhoneNumber(fromNumber),
+    //                from: new PhoneNumber(fromNumber),
 
-                    to: new PhoneNumber(message.Destination),
+    //                to: new PhoneNumber(message.Destination),
 
-                    body: message.Body);
+    //                body: message.Body);
 
 
-            return Task.FromResult(0);
-        }
+    //        return Task.FromResult(0);
+    //    }
         
 
-    }
+    //}
 
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
