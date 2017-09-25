@@ -49,7 +49,7 @@ namespace TheChromium.Controllers
             var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
             var StatusOptions = db.MemberStats.ToList();
 
-            Member NewMember = new Member()
+            Members NewMember = new Members()
             {
                 MemberType = MemberShipTypes,
                 StatusOptions = StatusOptions
@@ -61,7 +61,7 @@ namespace TheChromium.Controllers
         // POST: Managers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Member member)
+        public ActionResult Create(Members member)
         {
             db.Members.Add(member);
             db.SaveChanges();
@@ -82,7 +82,7 @@ namespace TheChromium.Controllers
         // POST: Managers/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Member member)
+        public ActionResult Edit(Members member)
         {
             var MemberInDB = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == member.id);
 

@@ -35,7 +35,7 @@ namespace TheChromium.Models
 
         public DbSet<Events> Events { get; set; }
 
-        public DbSet<Member> Members { get; set; }
+        public DbSet<Members> Members { get; set; }
 
         public DbSet<MembershipStatus> MemberStats { get; set; }
 

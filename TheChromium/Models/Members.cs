@@ -8,7 +8,7 @@ using System.Web;
 
 namespace TheChromium.Models
 {
-    public class Member
+    public class Members
     {
         [Key]
         public int id { get; set; }
