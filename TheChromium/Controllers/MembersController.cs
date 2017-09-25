@@ -22,21 +22,16 @@ namespace TheChromium.Controllers
 
         public ActionResult Index()
         {
-            var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
-            var members = db.Members.Include(y=> y.MemberStatus).ToList();
+            var members = db.Members.Include(y => y.MembershipId).ToList();
 
-            foreach(var member in members)
-            {
-                member.StatusOptions = StatusOptions;
-            }
-            
+     
             return View(members);
         }
 
         // GET: Members/Details/5
         public ActionResult Details(int? id)
         {
-            Member member = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == id);
+            Members member = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == id);
 
             if (member == null)
             {
@@ -52,7 +47,7 @@ namespace TheChromium.Controllers
             var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
             var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
 
-          Member NewMember = new Member()
+          Members NewMember = new Members()
           {
               MemberType = MemberShipTypes,
               StatusOptions = StatusOptions
@@ -64,7 +59,7 @@ namespace TheChromium.Controllers
         // POST: Members/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Member member)
+        public ActionResult Create(Members member)
         {
             var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
             var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
@@ -87,7 +82,7 @@ namespace TheChromium.Controllers
 
             member.MemberType = MemberShipTypes;
             member.StatusOptions = StatusOptions;
-
+            Members members = db.Members.Find(id);
             if (member == null)
             {
                 return HttpNotFound();
@@ -100,7 +95,7 @@ namespace TheChromium.Controllers
         // POST: Members/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Member member)
+        public ActionResult Edit(Members member)
         {
             var MemberInDB = db.Members.Include(y => y.MemberStatus).SingleOrDefault(y => y.id == member.id);
 
