@@ -325,14 +325,6 @@
     <Compile Include="Migrations\201709221927132_created a membership model model for members to select their card status.Designer.cs">
       <DependentUpon>201709221927132_created a membership model model for members to select their card status.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709242211006_removing foreign keys to add the foreign keys back.cs" />
-    <Compile Include="Migrations\201709242211006_removing foreign keys to add the foreign keys back.Designer.cs">
-      <DependentUpon>201709242211006_removing foreign keys to add the foreign keys back.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709242223490_put the foreign keys back.cs" />
-    <Compile Include="Migrations\201709242223490_put the foreign keys back.Designer.cs">
-      <DependentUpon>201709242223490_put the foreign keys back.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201709250604221_changed name of foreign key.cs" />
     <Compile Include="Migrations\201709250604221_changed name of foreign key.Designer.cs">
       <DependentUpon>201709250604221_changed name of foreign key.cs</DependentUpon>
@@ -620,12 +612,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709221927132_created a membership model model for members to select their card status.resx">
       <DependentUpon>201709221927132_created a membership model model for members to select their card status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709242211006_removing foreign keys to add the foreign keys back.resx">
-      <DependentUpon>201709242211006_removing foreign keys to add the foreign keys back.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709242223490_put the foreign keys back.resx">
-      <DependentUpon>201709242223490_put the foreign keys back.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709250604221_changed name of foreign key.resx">
       <DependentUpon>201709250604221_changed name of foreign key.cs</DependentUpon>
