@@ -76,7 +76,7 @@ namespace TheChromium.Controllers
             db.SaveChanges();
 
 
-            return RedirectToAction("Details","Members");
+            return RedirectToAction("Index","Home");
         }
 
         // GET: Members/Edit/5
@@ -110,7 +110,7 @@ namespace TheChromium.Controllers
             MemberInDB.LastName = member.LastName;
             MemberInDB.Email = member.Email;
             MemberInDB.MembershipId = member.MembershipId;
-            MemberInDB.StatusId = member.StatusId;
+            MemberInDB.MembershipStatusId = member.MembershipStatusId;
 
             db.SaveChanges();
 

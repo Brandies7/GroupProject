@@ -226,6 +226,14 @@
       <HintPath>..\packages\Twilio.5.6.5\lib\net451\Twilio.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Twilio.AspNet.Common, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.AspNet.Mvc.5.0.2\lib\net451\Twilio.AspNet.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Twilio.AspNet.Mvc, Version=5.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.AspNet.Mvc.5.0.2\lib\net451\Twilio.AspNet.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -324,6 +332,10 @@
     <Compile Include="Migrations\201709242034453_changed drivers id.cs" />
     <Compile Include="Migrations\201709242034453_changed drivers id.Designer.cs">
       <DependentUpon>201709242034453_changed drivers id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709250604221_changed name of foreign key.cs" />
+    <Compile Include="Migrations\201709250604221_changed name of foreign key.Designer.cs">
+      <DependentUpon>201709250604221_changed name of foreign key.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Email.cs" />
@@ -614,6 +626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709242034453_changed drivers id.resx">
       <DependentUpon>201709242034453_changed drivers id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709250604221_changed name of foreign key.resx">
+      <DependentUpon>201709250604221_changed name of foreign key.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
