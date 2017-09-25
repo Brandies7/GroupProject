@@ -112,6 +112,12 @@ namespace TheChromium.Controllers
 
             return View();
         }
+        public ActionResult SendEmail()
+        {
+            Email email = new Email();
+            
+            return View(email);
+        }
 
         //public RedirectResult RedirectToAspx()
         //{

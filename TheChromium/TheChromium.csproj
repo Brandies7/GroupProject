@@ -139,6 +139,10 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=105.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.2\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Activities.Presentation" />
@@ -322,6 +326,7 @@
       <DependentUpon>201709242034453_changed drivers id.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Models\FacebookUser.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Events.cs" />
@@ -576,6 +581,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\Managers\Map.cshtml" />
+    <Content Include="Views\Managers\SendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
