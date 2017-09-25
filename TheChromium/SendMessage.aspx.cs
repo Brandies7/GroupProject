@@ -4,43 +4,39 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Configuration;
+using System.Net;
 using Twilio;
+using System.Configuration;
 using Twilio.Clients;
-using System.Web.Services.Description;
-using Microsoft.AspNet.Identity;
-using System.Threading.Tasks;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
-
+using Microsoft.AspNet.Identity;
 
 namespace TheChromium
 {
-    public class SmsService : System.Web.UI.Page, IIdentityMessageService
+    public partial class SendMessage : System.Web.UI.Page
     {
-        public Task SendAsync(IdentityMessage message)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            // Plug in your SMS service here to send a text message.
+            
+        }
+
+        protected void ButtonSend_Click(object sender, EventArgs e)
+        {
+            IdentityMessage message;
+            message = new IdentityMessage();
             string accountSid = ConfigurationManager.AppSettings["SMSAccountIdentification"];
 
             string authToken = ConfigurationManager.AppSettings["SMSAccountPassword"];
 
             string fromNumber = ConfigurationManager.AppSettings["SMSAccountFrom"];
 
-            // Initialize the Twilio client
-
             TwilioClient.Init(accountSid, authToken);
-
-            MessageResource result = MessageResource.Create(
-
-                    from: new PhoneNumber(fromNumber),
-
-                    to: new PhoneNumber(message.Destination),
-
-                    body: message.Body);
-
-
-            return Task.FromResult(0);
+                
+            MessageResource.Create(
+                from: new PhoneNumber(fromNumber),
+                to: new PhoneNumber(TextBox1.Text),
+                body: (TextBox2.Text));
         }
     }
 }
