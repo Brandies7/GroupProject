@@ -357,6 +357,10 @@
     <Compile Include="Migrations\201709251240584_add-migration EmailAddedToManagersModel.Designer.cs">
       <DependentUpon>201709251240584_add-migration EmailAddedToManagersModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709251303315_AddedFunctionalityOfEmailToManager.cs" />
+    <Compile Include="Migrations\201709251303315_AddedFunctionalityOfEmailToManager.Designer.cs">
+      <DependentUpon>201709251303315_AddedFunctionalityOfEmailToManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\FacebookUser.cs" />
@@ -650,6 +654,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709251240584_add-migration EmailAddedToManagersModel.resx">
       <DependentUpon>201709251240584_add-migration EmailAddedToManagersModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709251303315_AddedFunctionalityOfEmailToManager.resx">
+      <DependentUpon>201709251303315_AddedFunctionalityOfEmailToManager.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
