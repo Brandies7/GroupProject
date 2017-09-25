@@ -7,13 +7,13 @@ namespace TheChromium.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addingunknownmigration : IMigrationMetadata
+    public sealed partial class removingforeignkeystoaddtheforeignkeysback : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addingunknownmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(removingforeignkeystoaddtheforeignkeysback));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709242016535_adding unknown migration"; }
+            get { return "201709242211006_removing foreign keys to add the foreign keys back"; }
         }
         
         string IMigrationMetadata.Source

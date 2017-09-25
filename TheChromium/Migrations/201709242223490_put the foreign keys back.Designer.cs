@@ -7,13 +7,13 @@ namespace TheChromium.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class changeddriversid : IMigrationMetadata
+    public sealed partial class puttheforeignkeysback : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changeddriversid));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(puttheforeignkeysback));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709242034453_changed drivers id"; }
+            get { return "201709242223490_put the foreign keys back"; }
         }
         
         string IMigrationMetadata.Source

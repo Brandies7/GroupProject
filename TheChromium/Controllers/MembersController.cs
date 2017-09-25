@@ -66,8 +66,11 @@ namespace TheChromium.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Member member)
         {
+            var MemberShipTypes = db.Roles.Where(u => u.Name != "Manager").ToList();
+            var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
 
             db.Members.Add(member);
+
             db.SaveChanges();
 
 
