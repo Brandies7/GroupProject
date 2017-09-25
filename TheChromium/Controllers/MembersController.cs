@@ -22,7 +22,7 @@ namespace TheChromium.Controllers
 
         public ActionResult Index()
         {
-            var members = db.Members.ToList();
+            var members = db.Members.Include(y => y.MembershipId).ToList();
 
      
             return View(members);
@@ -82,7 +82,7 @@ namespace TheChromium.Controllers
 
             member.MemberType = MemberShipTypes;
             member.StatusOptions = StatusOptions;
-
+            Members members = db.Members.Find(id);
             if (member == null)
             {
                 return HttpNotFound();
