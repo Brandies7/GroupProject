@@ -40,7 +40,6 @@ namespace TheChromium.Models
         [Display(Name = "Driver's License ID")]
         public string DriversNumber { get; set; }
 
-
         public IEnumerable<IdentityRole> MemberType { get; set; }
 
         public IEnumerable<MembershipStatus> StatusOptions { get; set; }
