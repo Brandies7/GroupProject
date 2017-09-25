@@ -115,8 +115,8 @@ namespace TheChromium.Controllers
         public ActionResult SendEmail()
         {
             //Email email = new Email();
-            
-            return View();
+            Manager manager = new Manager();
+            return View(manager);
         }
 
      
