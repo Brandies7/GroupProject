@@ -22,14 +22,9 @@ namespace TheChromium.Controllers
 
         public ActionResult Index()
         {
-            var StatusOptions = db.MemberStats.Where(y => y.CurrentStats != "Black Listed").ToList();
-            var members = db.Members.Include(y=> y.MemberStatus).ToList();
+            var members = db.Members.ToList();
 
-            foreach(var member in members)
-            {
-                member.StatusOptions = StatusOptions;
-            }
-            
+     
             return View(members);
         }
 
