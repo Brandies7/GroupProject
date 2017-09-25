@@ -79,7 +79,7 @@ namespace TheChromium.Controllers
 
             member.MemberType = MemberShipTypes;
             member.StatusOptions = StatusOptions;
-
+            Members members = db.Members.Find(id);
             if (member == null)
             {
                 return HttpNotFound();
